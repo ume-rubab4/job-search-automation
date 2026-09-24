@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check every module imports
+        run: |
+          python -c "import api"
+          python -c "from agent import main, matcher, documents, sources"
+
+      - name: Build the Docker image
+        run: docker build -t job-agent .
+
+      - name: Verify the container starts and serves requests
+        run: |
+          docker run -d -p 8000:8000 --name test-container job-agent
+          sleep 10
+          docker logs test-container
+          curl --fail --retry 5 --retry-delay 3 http://localhost:8000/ || (docker logs test-container && exit 1)
+          docker stop test-container
