@@ -3,15 +3,31 @@ Auto-apply for Greenhouse / Lever / Ashby / Workable application forms using Pla
 Candidate-side APIs don't exist for these platforms, so we fill the public form.
 If the form has captcha, login, or unexpected required fields, we stop and mark it
 'package_ready' so you can finish it manually with the prepared CV and cover letter.
+
+Playwright is an optional dependency. Without it the module still imports and
+auto_apply degrades to package_ready, which is the same outcome as an unsupported
+platform. This keeps the container image small and lets the package be imported
+without a browser runtime installed.
 """
 import os
-from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
+
+try:
+    from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
+except ImportError:
+    sync_playwright = None
+    PWTimeout = Exception
+
 from .core import PROFILE, CONFIG
 
+_name_parts = (PROFILE.get("name") or "").split()
 FIELD_MAP = {
-    "first": PROFILE["name"].split()[0], "last": PROFILE["name"].split()[-1],
-    "name": PROFILE["name"], "email": PROFILE["email"], "phone": PROFILE["phone"],
-    "location": PROFILE["location"], "linkedin": PROFILE.get("linkedin", ""),
+    "first": _name_parts[0] if _name_parts else "",
+    "last": _name_parts[-1] if _name_parts else "",
+    "name": PROFILE.get("name", ""),
+    "email": PROFILE.get("email", ""),
+    "phone": PROFILE.get("phone", ""),
+    "location": PROFILE.get("location", ""),
+    "linkedin": PROFILE.get("linkedin", ""),
 }
 UNSUPPORTED_MARKERS = ["captcha", "recaptcha", "hcaptcha", "sign in to apply", "create an account"]
 
@@ -29,6 +45,8 @@ def _fill_by_label(page, keyword: str, value: str) -> bool:
 
 
 def auto_apply(job: dict, cv_path: str, cover_path: str | None) -> tuple[bool, str]:
+    if sync_playwright is None:
+        return False, "playwright not installed; prepare for manual submit"
     if job["platform"] not in CONFIG["apply"]["auto_apply_platforms"]:
         return False, "platform not supported for auto-apply"
     with sync_playwright() as p:
