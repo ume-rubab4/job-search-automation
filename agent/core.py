@@ -6,7 +6,19 @@ from supabase import create_client
 load_dotenv()
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = yaml.safe_load((ROOT / "config.yaml").read_text())
-PROFILE = json.loads((ROOT / "data" / "profile.json").read_text())
+def _load_profile() -> dict:
+    """Load the candidate profile, falling back to the example file.
+
+    Keeping this non-fatal means the package can be imported without a
+    configured profile, which is what CI and a fresh clone need.
+    """
+    for candidate in (ROOT / "data" / "profile.json", ROOT / "data" / "profile.example.json"):
+        if candidate.exists():
+            return json.loads(candidate.read_text(encoding="utf-8"))
+    return {"name": "", "email": "", "phone": "", "location": "", "headline": ""}
+
+
+PROFILE = _load_profile()
 OUTPUT_DIR = ROOT / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
