@@ -1,0 +1,65 @@
+target_roles:
+  - Data Analyst
+  - Business Analyst
+  - Business Intelligence Analyst
+  - Power BI Developer
+  - AI Engineer
+  - AI Agent Engineer
+  - SAP FICO Consultant
+  - SAP Analyst
+  - IT Support Specialist
+  - IT Help Desk Analyst
+
+seniority: [entry, junior, associate, mid]
+
+# ISO country codes. Adzuna covers the first group; Jooble covers everything.
+countries:
+  primary: [AU, DE, GB, US, FR, ES, CH, NL, IE, SE, DK, AT, BE, IT, PL]
+  gulf:    [AE, SA, QA, OM, KW, BH]
+excluded_countries: [EG]
+
+# Only keep jobs where sponsorship is stated, OR the company is a known sponsor.
+visa:
+  require_sponsorship: true
+  known_sponsors:      # extend freely; the LLM also checks the description
+    - Deloitte
+    - PwC
+    - EY
+    - KPMG
+    - Accenture
+    - Capgemini
+    - IBM
+    - Microsoft
+    - Amazon
+    - Google
+    - SAP
+    - Siemens
+    - Bosch
+    - Emirates
+    - Etihad
+    - Aramco
+    - Qatar Airways
+    - ADNOC
+    - Emaar
+    - Majid Al Futtaim
+    - Mastercard
+    - Oracle
+    - Infosys
+    - TCS
+    - Wipro
+    - Cognizant
+
+prefer_large_companies: true   # LLM adds a company_size guess; large firms ranked first
+
+matching:
+  min_fit_score: 65
+  max_jobs_per_day: 12
+  max_job_age_days: 21
+
+apply:
+  mode: auto            # auto | package
+  auto_apply_platforms: [greenhouse, lever, ashby, workable]
+
+# LinkedIn, Indeed and Naukrigulf have no public APIs; these are scraped (best effort).
+scraped_sources:
+  enabled: false

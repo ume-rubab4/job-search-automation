@@ -1,0 +1,13 @@
+.env
+.git
+.github
+__pycache__/
+*.pyc
+web/node_modules
+web/dist
+logs/
+venv/
+.venv/
+.streamlit
+*.log
+agent/test_ba.py

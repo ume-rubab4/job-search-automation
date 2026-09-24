@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+web/node_modules/
+web/dist/
+logs/
+data/output/
+*.log
+venv/
+.venv/
+.streamlit/
+output/
+data/profile.json

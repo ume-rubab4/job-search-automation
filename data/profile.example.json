@@ -1,0 +1,92 @@
+{
+  "name": "Ume Rubab",
+  "headline": "Data Analyst | Power BI & Business Intelligence Specialist | Financial Reporting",
+  "email": "ummerubab497@gmail.com",
+  "phone": "+92 3204131497",
+  "location": "Lahore, Pakistan",
+  "nationality": "Pakistani",
+  "needs_visa_sponsorship": true,
+  "availability": "Available for immediate joining; open to relocation",
+  "linkedin": "",
+  "summary": "Results-driven Data Analyst & Accounting Professional with hands-on experience building interactive Power BI dashboards and Excel-based reporting tools that turn complex datasets into clear, actionable insights for management. Skilled in Power BI, Advanced Excel, SQL, SAP FICO, ERP systems and QuickBooks, with a track record of improving reporting accuracy, automating recurring reports, and ensuring data integrity.",
+  "skills": [
+    "Power BI (dashboard development, data visualization, reporting)",
+    "Microsoft Excel (Advanced: pivot tables, VLOOKUP, data modeling)",
+    "SQL (data extraction and querying)",
+    "SAP FICO (Financial Accounting & Controlling)",
+    "ERP systems", "QuickBooks",
+    "Data cleaning, validation and reconciliation",
+    "Financial reporting and analysis",
+    "KPI tracking and performance monitoring",
+    "Business intelligence and dashboard reporting",
+    "Google Sheets, MS Office (Word, PowerPoint, Outlook, Teams)",
+    "IT help desk and first-level technical support",
+    "Ticketing systems, system monitoring, IT security basics"
+  ],
+  "experience": [
+    {
+      "title": "Data Analyst",
+      "company": "Excellence Delivered Pvt. Ltd.",
+      "location": "Lahore, Pakistan",
+      "start": "Jan 2025", "end": "Nov 2025",
+      "bullets": [
+        "Collected, cleaned, and analyzed large structured datasets to support business operations and strategic planning",
+        "Developed interactive dashboards using Power BI and Excel, enabling real-time tracking of KPIs and performance metrics",
+        "Performed advanced data analysis to identify trends and insights, improving decision-making efficiency",
+        "Automated recurring reports, reducing manual effort by up to 30-40%",
+        "Executed data validation and reconciliation processes to ensure high data accuracy and integrity",
+        "Utilized SQL queries to extract and manipulate data from databases",
+        "Collaborated with finance and operations teams to align insights with business objectives",
+        "Supported budgeting and forecasting through data-driven analysis",
+        "Presented findings and recommendations to management in a structured, professional format"
+      ]
+    },
+    {
+      "title": "Business Data Analyst (Remote / Project-Based)",
+      "company": "Freelance",
+      "location": "Remote",
+      "start": "Oct 2024", "end": "Dec 2024",
+      "bullets": [
+        "Assisted in financial data entry, reconciliation, and reporting using Excel and accounting tools",
+        "Supported preparation of invoices, expense tracking, and basic financial statements",
+        "Created dashboards (Excel/Power BI) for tracking sales, expenses, and performance metrics",
+        "Worked with QuickBooks and ERP systems for transaction recording and reporting",
+        "Cleaned and structured datasets to improve accuracy and usability",
+        "Maintained organized documentation aligned with accounting standards"
+      ]
+    },
+    {
+      "title": "IT Help Desk Agent",
+      "company": "Pakistan Telecommunication Company (PTCL)",
+      "location": "Lahore, Pakistan",
+      "start": "Feb 2023", "end": "Sep 2023",
+      "bullets": [
+        "Provided first-level technical support for hardware, software, and network-related issues",
+        "Resolved user queries via phone, email, and ticketing systems, ensuring minimal downtime",
+        "Diagnosed and troubleshot technical issues efficiently to maintain system performance",
+        "Assisted in system monitoring and basic data/report analysis",
+        "Ensured compliance with IT security policies, including updates, backups, and antivirus protection",
+        "Maintained detailed records of support tickets, resolutions, and system changes",
+        "Coordinated with IT teams to escalate and resolve complex technical issues",
+        "Conducted user guidance and basic training on internal systems"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor's Degree in Business Information Technology",
+      "institution": "University of Engineering and Technology (UET), Lahore",
+      "end": "Sep 2024"
+    }
+  ],
+  "certifications": [
+    "IBM Data Analytics Professional Certificate (Dec 2025)",
+    "SAP FICO (Financial Accounting & Controlling) (Sep 2024)"
+  ],
+  "achievements": [
+    "Improved reporting efficiency by automating Excel-based reports (30-40% time reduction)",
+    "Enhanced data accuracy through structured validation and reconciliation processes",
+    "Built Power BI dashboards that improved management visibility on KPIs and performance trends"
+  ],
+  "languages": ["English (Professional proficiency)", "Urdu (Native)"]
+}
